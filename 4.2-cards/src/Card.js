@@ -11,7 +11,7 @@ const Card = (props) =>{
            <div className="content">
                 <div className="title">{props.title}</div>
                 <div className="description">{props.description}</div>
-                <div className="links"><a className="link1" href="http://">one  </a> <a className="link2" href="http://">two</a></div>
+                <div className="links"><a className="link1" href="http://">one</a> <a className="link2" href="http://">two</a></div>
            </div>
 
        </div>
