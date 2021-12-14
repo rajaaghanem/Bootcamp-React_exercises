@@ -1,0 +1,36 @@
+.box {
+  visibility: visible;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  background-color: lightskyblue;
+  animation: boxAnimation 0.5s;
+  animation-timing-function: ease-in-out linear;
+  box-shadow: 1rem 1rem 2rem gray;
+}
+
+.box-hidden {
+  visibility: hidden;
+}
+
+.small-box {
+  width: 100px;
+  height: 100px;
+  background-color: magenta;
+}
+
+.middle-box {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(138, 102, 138);
+}
+
+@keyframes boxAnimation {
+  from {
+    transform: translateX(-200px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
