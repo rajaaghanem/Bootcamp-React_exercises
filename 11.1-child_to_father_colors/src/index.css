@@ -1,0 +1,20 @@
+.btn {
+  width: 4rem;
+  height: 4rem;
+  box-shadow: 1rem 1rem 2rem gray;
+  border-radius: 5px;
+  margin: 1rem;
+  border: none;
+}
+
+.blue {
+  background-color: lightskyblue;
+}
+
+.red {
+  background-color: rgb(202, 62, 62);
+}
+
+.yellow {
+  background-color: rgb(226, 226, 106);
+}
