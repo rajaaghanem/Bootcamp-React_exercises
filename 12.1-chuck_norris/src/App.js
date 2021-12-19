@@ -5,12 +5,21 @@ import Button from "./components/Button/Button";
 import Input from "./components/Input/Input";
 
 class App extends React.Component {
-  state = { joke: "", Categories: [], categoryJok: "", currCategory: "", searchJokes:[] };
+  state = { joke: "", Categories: [], categoryJok: "", currCategory: "", searchJokes:[], errorMassege:""};
+
+  componentDidMount=()=>{
+    this.getCategories();
+  }
 
   getRandomJoke = async () => {
-    const response = await axios.get("https://api.chucknorris.io/jokes/random");
+    try{
+      const response = await axios.get("https://api.chucknorris.io/jokes/random");
     const theJoke = response.data.value;
     this.setState({ joke: theJoke });
+    }catch(e){
+      this.setState({errorMassege: e.response.data.massege});
+    }
+    
   };
 
   getCategories = async () => {
@@ -21,9 +30,8 @@ class App extends React.Component {
   };
 
   creatCategoriesButtons = () => {
-    this.getCategories();
-    return this.state.Categories.map((category) => {
-      return <Button onclick={this.handleClick} name ={`${category}`} title={`${category}`}></Button>;
+    return this.state.Categories.map((category,i) => {
+      return <Button key={i} onclick={this.handleClick} name ={`${category}`} title={`${category}`}></Button>;
     });
   };
 
@@ -44,8 +52,7 @@ class App extends React.Component {
   }
 
   printSearchJokes=()=>{
-    console.log(this.state.searchJokes);
-   return this.state.searchJokes.map((joke)=>{ return <div>{joke.value}</div>});
+   return this.state.searchJokes.map((joke)=>{ return <div key={joke.id}>{joke.value}</div>});
   }
 
   render() {
@@ -57,6 +64,7 @@ class App extends React.Component {
         {this.state.categoryJok}
         <Input labelName="Search" saveInput={this.handleInput}/>
         {this.printSearchJokes()}
+        <div>{this.state.errorMassege}</div>
       </>
     );
   }
