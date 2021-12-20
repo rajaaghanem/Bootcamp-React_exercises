@@ -4,11 +4,9 @@ import "./Input.css";
 
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: " " };
-    this.inputRef = React.createRef();
-  }
+
+  state = { text: " " };
+  inputRef = React.createRef();
 
   //update the state text by the user input
   handleInput = (event) => {
@@ -18,7 +16,7 @@ class Input extends React.Component {
   componentDidMount = () => {
     this.inputRef.current.focus();
   };
-
+  
   //save the user input when the user press enter
   handleKey = () => this.props.saveInput(this.state.text);
 
