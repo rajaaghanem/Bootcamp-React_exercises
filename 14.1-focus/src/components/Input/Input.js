@@ -7,7 +7,6 @@ class Input extends React.Component {
     this.state = { text: " " };
     this.inputRef = React.createRef();
   }
-  // state = {  };
 
   //update the state text by the user input
   handleInput = (event) => {
