@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import SearchBar from "./components/SearchBar/SearchBar";
 import youtube from "./apis/youtube";
-import VideoList from "./components/SearchBar/VideoList/VideoList";
+import VideoList from "./components/VideoList/VideoList";
 
 class App extends React.Component {
   state = { videos: [] };
