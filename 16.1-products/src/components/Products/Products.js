@@ -10,12 +10,6 @@ class Products extends React.Component {
     this.setState({ data: store });
   };
 
-  updateProducts = () => {
-    this.state.data.map((el) => {
-      return <div>{el.title}</div>;
-    });
-  };
-
   render() {
       console.log(this.state.data);
     return (

@@ -14,8 +14,12 @@ class ProductDetail extends React.Component {
     this.setState({ currentItem: findItem });
   };
 
+  handleClick=()=>{
+    this.props.history.goBack();
+  }
+
   render() {
-    console.log(this.props.match.params.id);
+    console.log(this.props);
     console.log(this.state.currentItem);
 
     return (<div className="proudct-container">
@@ -23,6 +27,7 @@ class ProductDetail extends React.Component {
       <img src={`${this.state.currentItem.imageUrl}`}/>
       <div>  {this.state.currentItem.size}</div>
       <div>  {`${this.state.currentItem.price} $`}</div>
+      <button onClick={this.handleClick}>Back</button>
     </div>);
   }
 }

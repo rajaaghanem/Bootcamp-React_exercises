@@ -15,7 +15,6 @@ class App extends React.Component {
             <Route path="/" exact component={Homepage} />
             <Route path="/products" exact component={Products} />
             <Route path="/productDetails/:id" exact component={ProductDetail} />
-
           </div>
         </BrowserRouter>
       </div>
