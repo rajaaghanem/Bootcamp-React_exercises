@@ -19,11 +19,45 @@ class App extends React.Component {
 
   createTask = () => {
     const id = uuidv4();
-    const task = <Task key={id} text={this.state.userInput} />;
-    this.setState({ tasks: [...this.state.tasks, task] });
+    this.setState({
+      tasks: [...this.state.tasks, { id: id, text: this.state.userInput }],
+    });
+  };
+
+
+  displayTasks = () => {
+    return this.state.tasks.map((task) => {
+      return (
+        <div key={task.id}>
+          <Task
+            id={task.id}
+            text={this.state.userInput}
+            update={this.handleUpdate}
+          />
+          {/* <button onClick={() => this.handleDelete(item.id)}>Delete</button> */}
+        </div>
+      );
+    });
+  };
+
+  //update the text inside the Task in tasks array
+  handleUpdate = (textupdate, id) => {
+    const tasks= this.state.tasks;
+    const task = tasks.find((task) => task.id === id);
+    const editedtask =
+    {
+      ...task,
+      text: textupdate,
+    };
+    this.setState({
+      tasks: this.state.tasks.map((task) => {
+        return task.id === id ? editedtask : task;
+      }),
+    });
   };
 
   render() {
+    console.log(this.state.tasks);
     return (
       <div className="app-container">
         <input
@@ -35,7 +69,7 @@ class App extends React.Component {
         <button className="add-task-style" onClick={this.createTask}>
           Add Task
         </button>
-        <div className="tasks-container"> {this.state.tasks}</div>
+        <div className="tasks-container"> {this.displayTasks()}</div>
       </div>
     );
   }
