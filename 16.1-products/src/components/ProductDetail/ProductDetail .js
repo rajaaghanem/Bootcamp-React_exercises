@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import store from "../../store/store";
+import "./ProuductDetail.css";
 
 class ProductDetail extends React.Component {
   state = { data: store, currentItem: {} };
@@ -17,8 +18,11 @@ class ProductDetail extends React.Component {
     console.log(this.props.match.params.id);
     console.log(this.state.currentItem);
 
-    return (<div>
-      {this.state.currentItem.size}
+    return (<div className="proudct-container">
+      <div>{this.state.currentItem.title}</div>
+      <img src={`${this.state.currentItem.imageUrl}`}/>
+      <div>  {this.state.currentItem.size}</div>
+      <div>  {`${this.state.currentItem.price} $`}</div>
     </div>);
   }
 }

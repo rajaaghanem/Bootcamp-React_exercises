@@ -1,0 +1,8 @@
+.proudct-container {
+  margin: 2rem;
+  font-size: 1.2rem;
+  box-shadow: 1rem 1rem 2rem rgb(55, 55, 141);
+  width: auto;
+  text-align: center;
+  height: 40rem;
+}
