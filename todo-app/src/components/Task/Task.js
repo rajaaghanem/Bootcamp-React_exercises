@@ -25,8 +25,10 @@ class Task extends React.Component {
     console.log(this.props.id);
     return <div className="task-container">
       <textarea rows="12" cols="28" value={this.state.update} onChange={this.handleNewInput}/>
-      <button className="btn-style" onClick={this.handleClickEdit}>Update </button>
+      <input type="checkbox" className="checkbox-style"/>
+      <button className="btn-style" onClick={this.handleClickEdit}>Update</button>
       <button className="btn-style" onClick={this.handleClickDelete}>Delete</button>
+      {/* <button className="btn-style" onClick={this.handleClickDelete}>Delete</button> */}
       </div>;
   }
 }

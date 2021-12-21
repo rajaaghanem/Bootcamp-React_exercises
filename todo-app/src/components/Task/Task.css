@@ -1,6 +1,6 @@
 .task-container {
   width: 15rem;
-  height: 17rem;
+  height: 19rem;
   text-align: center;
   margin: 0.5rem;
   box-shadow: 0.5rem 0.5rem 0.7rem palevioletred;
@@ -19,4 +19,14 @@
   border-radius: 0.3rem;
   text-align: center;
   padding: 0.1rem;
+}
+
+.checkbox-style {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem gray;
+  border-radius: 5px;
+  border: none;
+  margin: 2rem;
 }
