@@ -4,7 +4,7 @@ import store from "../../store/store";
 import "./ProuductDetail.css";
 
 class ProductDetail extends React.Component {
-  state = { data: store, currentItem: {} };
+  state = { data: store, currentItem: {}};
 
   componentDidMount = () => {
     const id = Number(this.props.match.params.id);
@@ -12,23 +12,28 @@ class ProductDetail extends React.Component {
       return item.id === id;
     });
     this.setState({ currentItem: findItem });
+
   };
 
-  handleClick=()=>{
+  handleClick = () => {
     this.props.history.goBack();
-  }
+  };
 
   render() {
-    console.log(this.props);
-    console.log(this.state.currentItem);
+    // console.log(this.props);
+    // console.log(this.state.currentItem);
 
-    return (<div className="proudct-container">
-      <div>{this.state.currentItem.title}</div>
-      <img src={`${this.state.currentItem.imageUrl}`}/>
-      <div>  {this.state.currentItem.size}</div>
-      <div>  {`${this.state.currentItem.price} $`}</div>
-      <button onClick={this.handleClick}>Back</button>
-    </div>);
+    return (
+
+      <div className="proudct-container">
+        <div>{this.state.currentItem.title}</div>
+        {this.state.showBox ? <div className="yellow-box"></div> : null}
+        <img src={`${this.state.currentItem.imageUrl}`} />
+        <div> {this.state.currentItem.size}</div>
+        <div> {`${this.state.currentItem.price} $`}</div>
+        <button onClick={this.handleClick}>Back</button>
+      </div>
+    );
   }
 }
 
