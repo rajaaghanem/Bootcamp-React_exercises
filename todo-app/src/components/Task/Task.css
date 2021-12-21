@@ -1,0 +1,17 @@
+.task-container {
+  width: 15rem;
+  height: 15rem;
+  text-align: center;
+  margin: 4rem;
+  box-shadow: 1rem 1rem 2rem palevioletred;
+}
+
+.btn-style {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(124, 56, 118);
+  margin: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 0.3rem;
+}

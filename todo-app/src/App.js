@@ -19,7 +19,7 @@ class App extends React.Component {
 
   createTask=()=>{
     const id = uuidv4();
-    const task = <Task key={id}/>;
+    const task = <Task key={id} text={this.state.userInput}/>;
     this.setState({tasks:[...this.state.tasks, task]})
   }
 

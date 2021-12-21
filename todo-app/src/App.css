@@ -12,4 +12,6 @@
   width: 5rem;
   height: 4rem;
   background-color: rgb(124, 56, 118);
+  font-weight: bold;
+  border-radius: 0.3rem;
 }
