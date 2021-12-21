@@ -17,6 +17,7 @@ class App extends React.Component {
     this.setState({ userInput: event.target.value });
   };
 
+  // add a uniqe id and usertext to an task object in tasks array
   createTask = () => {
     const id = uuidv4();
     this.setState({
@@ -24,7 +25,7 @@ class App extends React.Component {
     });
   };
 
-
+  //map over tasks array and create Taks components
   displayTasks = () => {
     return this.state.tasks.map((task) => {
       return (
@@ -33,19 +34,26 @@ class App extends React.Component {
             id={task.id}
             text={this.state.userInput}
             update={this.handleUpdate}
+            delete={this.handleDelete}
           />
-          {/* <button onClick={() => this.handleDelete(item.id)}>Delete</button> */}
         </div>
       );
     });
   };
 
-  //update the text inside the Task in tasks array
+  //delete the selected task from tasks
+  handleDelete = (id) => {
+    const filteredList = this.state.tasks.filter((task) => {
+      return task.id !== id;
+    });
+    this.setState({ tasks: filteredList });
+  };
+
+  //update the text inside the selected Task (id) in tasks array
   handleUpdate = (textupdate, id) => {
-    const tasks= this.state.tasks;
+    const tasks = this.state.tasks;
     const task = tasks.find((task) => task.id === id);
-    const editedtask =
-    {
+    const editedtask = {
       ...task,
       text: textupdate,
     };
