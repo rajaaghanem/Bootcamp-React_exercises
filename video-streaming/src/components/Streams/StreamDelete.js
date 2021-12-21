@@ -2,7 +2,7 @@ import React from "react";
 
 
 const StreamDelete=()=>{
-    return (<div></div>);
+    return (<div>StreamDelete</div>);
 }
 
 export default StreamDelete;

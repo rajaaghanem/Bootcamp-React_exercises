@@ -1,29 +1,28 @@
 import React from "react";
 import "./App.css";
-import {BrowserRouter, Router, Link} from 'react-router-dom';
+import {BrowserRouter, Router, Route, Link} from 'react-router-dom';
 import StreamCreate from "./components/Streams/StreamCreate";
 import StreamDelete from "./components/Streams/StreamDelete";
 import StreamEdit from "./components/Streams/StreamEdit";
 import StreamList from "./components/Streams/StreamList";
 import StreamShow from "./components/Streams/StreamShow";
 
-class App extends React.Component {
-  render() {
+const App =()=>{
+
     return (
       <div>
         <BrowserRouter>
             <div>
-              <Router path="/" exact Component={StreamList}/>
-              <Router path="/streams/new" exact Component={StreamCreate}/>
-              <Router path="/streams/edit" exact Component={StreamEdit}/>
-              <Router path="/streams/delete" exact Component={StreamDelete}/>
-              <Router path="/streams/show" exact Component={StreamShow}/>
+              <Route path="/" exact component={StreamList}/>
+              <Route path="/streams/new" exact component={StreamCreate}/>
+              <Route path="/streams/edit" exact component={StreamEdit}/>
+              <Route path="/streams/delete" exact component={StreamDelete}/>
+              <Route path="/streams/show" exact component={StreamShow}/>
             </div>
         </BrowserRouter>
 
       </div>
     );
   }
-}
 
 export default App;
