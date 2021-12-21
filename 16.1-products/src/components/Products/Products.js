@@ -1,17 +1,29 @@
 import React from "react";
-// import{Link} from 'react-router-dom';
+import "./Product.css"
+import { Link } from "react-router-dom";
 import store from "../../store/store";
 
 class Products extends React.Component {
-  state = { data: [] };
+  state = { data: [], Links: [] };
 
   componentDidMount = () => {
     this.setState({ data: store });
   };
 
+  updateProducts = () => {
+    this.state.data.map((el) => {
+      return <div>{el.title}</div>;
+    });
+  };
+
   render() {
-    console.log(this.state.data);
-    return <div className="">products</div>;
+    return (
+      <div >
+        {this.state.data.map((el) => {
+          return <Link className="product-design">{el.title}</Link>;
+        })}
+      </div>
+    );
   }
 }
 
