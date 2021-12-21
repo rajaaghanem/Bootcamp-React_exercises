@@ -6,12 +6,15 @@
 .input-style {
   width: 40rem;
   height: 4rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid rgb(100, 40, 95);
 }
 
 .add-task-style {
   width: 5rem;
   height: 4rem;
   background-color: rgb(124, 56, 118);
+  border: 0.2rem solid rgb(100, 40, 95);
   font-weight: bold;
   border-radius: 0.3rem;
 }

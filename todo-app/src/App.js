@@ -23,6 +23,7 @@ class App extends React.Component {
     this.setState({
       tasks: [...this.state.tasks, { id: id, text: this.state.userInput }],
     });
+    
   };
 
   //map over tasks array and create Taks components
