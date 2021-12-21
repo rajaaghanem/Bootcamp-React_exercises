@@ -1,0 +1,15 @@
+.app-container {
+  margin: 3rem;
+  text-align: center;
+}
+
+.input-style {
+  width: 40rem;
+  height: 4rem;
+}
+
+.add-task-style {
+  width: 5rem;
+  height: 4rem;
+  background-color: rgb(124, 56, 118);
+}
