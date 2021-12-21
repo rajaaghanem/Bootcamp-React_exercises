@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Homepage from "./components/Homepage/Homepage";
 import Header from "./components/Header/Header";
 import Products from "./components/Products/Products";
-
+import ProductDetail from "./components/ProductDetail/ProductDetail ";
 class App extends React.Component {
   render() {
     return (
@@ -14,6 +14,8 @@ class App extends React.Component {
             <Header/>
             <Route path="/" exact component={Homepage} />
             <Route path="/products" exact component={Products} />
+            <Route path="/productDetails/:id" exact component={ProductDetail} />
+
           </div>
         </BrowserRouter>
       </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import store from "../../store/store";
 
 class Products extends React.Component {
-  state = { data: [], Links: [] };
+  state = { data: [] };
 
   componentDidMount = () => {
     this.setState({ data: store });
@@ -17,10 +17,11 @@ class Products extends React.Component {
   };
 
   render() {
+      console.log(this.state.data);
     return (
       <div >
         {this.state.data.map((el) => {
-          return <Link className="product-design">{el.title}</Link>;
+          return <Link key={el.id} to={`/productDetails/${el.id}`} className="product-design">{el.title}</Link>;
         })}
       </div>
     );
