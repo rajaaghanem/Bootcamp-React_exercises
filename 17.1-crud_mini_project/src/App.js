@@ -7,28 +7,28 @@ import { v4 as uuidv4 } from "uuid";
 class App extends React.Component {
   state = { students: [], userInputName: "", userInputImg: "" };
 
-  // componentDidMount = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       "https://61c300cc9cfb8f0017a3e86b.mockapi.io/users"
-  //     );
-  //     this.setState({ students: response.data });
-  //     console.log("api", response);
-  //   } catch (e) {
-  //     console.log("link not found");
-  //   }
-  // };
-
   componentDidMount = async () => {
-    const response = await axios
-      .get("https://61c300cc9cfb8f0017a3e86b.mockapi.io/users")
-      .then((response) => {
-        this.setState({ students: response.data });
-      })
-      .catch(() => {
-        console.log("link not found");
-      });
+    try {
+      const response = await axios.get(
+        "https://61c300cc9cfb8f0017a3e86b.mockapi.io/users"
+      );
+      this.setState({ students: response.data });
+      console.log("api", response);
+    } catch (e) {
+      console.log("link not found");
+    }
   };
+
+  // componentDidMount = async () => {
+  //   const response = await axios
+  //     .get("https://61c300cc9cfb8f0017a3e86b.mockapi.io/users")
+  //     .then((response) => {
+  //       this.setState({ students: response.data });
+  //     })
+  //     .catch(() => {
+  //       console.log("link not found");
+  //     });
+  // };
 
   //map over students in state and display them on screen
   displayStudent = () => {
@@ -87,7 +87,7 @@ class App extends React.Component {
       );
       console.log("api add", response);
       this.setState({
-        students: [...this.state.students, student],
+        students: [...this.state.students, response.data],
       });
     } catch (e) {}
   };
