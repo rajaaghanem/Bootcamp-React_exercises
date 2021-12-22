@@ -1,0 +1,10 @@
+.img-box {
+  width: 10rem;
+  height: 10rem;
+}
+
+.student-box {
+  border: 0.2rem solid rgb(127, 189, 127);
+  margin: 1rem;
+  text-align: center;
+}
