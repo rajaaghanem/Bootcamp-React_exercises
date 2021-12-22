@@ -52,7 +52,7 @@ class App extends React.Component {
 
   //update the text inside the selected Task (id) in tasks array
   handleUpdate = (textupdate, id) => {
-    const tasks = this.state.tasks;
+    const tasks = [...this.state.tasks];
     const task = tasks.find((task) => task.id === id);
     const editedtask = {
       ...task,

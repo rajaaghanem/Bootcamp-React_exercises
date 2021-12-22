@@ -22,4 +22,5 @@
 .tasks-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: url("/c3mIwQ.jpg") no-repeat center center/cover;
 }

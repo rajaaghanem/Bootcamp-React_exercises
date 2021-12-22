@@ -28,7 +28,6 @@ class Task extends React.Component {
       <input type="checkbox" className="checkbox-style"/>
       <button className="btn-style" onClick={this.handleClickEdit}>Update</button>
       <button className="btn-style" onClick={this.handleClickDelete}>Delete</button>
-      {/* <button className="btn-style" onClick={this.handleClickDelete}>Delete</button> */}
       </div>;
   }
 }
