@@ -5,7 +5,7 @@ import Student from "./components/Student/Student";
 import { v4 as uuidv4 } from "uuid";
 
 class App extends React.Component {
-  state = { students: [], userInputName: "", userInputImg: " " };
+  state = { students: [], userInputName: "", userInputImg: "" };
 
   componentDidMount = async () => {
     const response = await axios.get(
@@ -15,6 +15,7 @@ class App extends React.Component {
     console.log("api", response);
   };
 
+  //map over students in state and display them on screen
   displayStudent = () => {
     return this.state.students.map((student) => {
       return (
@@ -62,7 +63,7 @@ class App extends React.Component {
     const student = {
       // id : uuidv4(),
       name: this.state.userInputName,
-      imgURL: this.state.imgURL,
+      imgURL: this.state.userInputImg,
     };
     try {
       const response = await axios.post(
@@ -76,6 +77,7 @@ class App extends React.Component {
     } catch (e) {}
   };
 
+  //delete student from api and state students array
   handleDelete = async (id) => {
     try{
       const response = await axios.delete(

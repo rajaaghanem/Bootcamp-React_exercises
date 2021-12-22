@@ -9,10 +9,12 @@ class Student extends React.Component {
     this.setState({ update: this.props.name });
   };
 
+  //update the user input in state
   handleNewInput = (event) => {
     this.setState({ update: event.target.value });
   };
 
+  //update student name in api and state in App
   handleClickEdit = async () => {
     const student = {
       id: this.props.id,
@@ -30,6 +32,7 @@ class Student extends React.Component {
     
   };
 
+  //delete student from api and state in App
   handleClickDelete=()=>{
     this.props.delete(this.props.id);
   }
