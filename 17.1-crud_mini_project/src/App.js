@@ -7,12 +7,27 @@ import { v4 as uuidv4 } from "uuid";
 class App extends React.Component {
   state = { students: [], userInputName: "", userInputImg: "" };
 
+  // componentDidMount = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://61c300cc9cfb8f0017a3e86b.mockapi.io/users"
+  //     );
+  //     this.setState({ students: response.data });
+  //     console.log("api", response);
+  //   } catch (e) {
+  //     console.log("link not found");
+  //   }
+  // };
+
   componentDidMount = async () => {
-    const response = await axios.get(
-      "https://61c300cc9cfb8f0017a3e86b.mockapi.io/users"
-    );
-    this.setState({ students: response.data });
-    console.log("api", response);
+    const response = await axios
+      .get("https://61c300cc9cfb8f0017a3e86b.mockapi.io/users")
+      .then((response) => {
+        this.setState({ students: response.data });
+      })
+      .catch(() => {
+        console.log("link not found");
+      });
   };
 
   //map over students in state and display them on screen
@@ -79,7 +94,7 @@ class App extends React.Component {
 
   //delete student from api and state students array
   handleDelete = async (id) => {
-    try{
+    try {
       const response = await axios.delete(
         `https://61c300cc9cfb8f0017a3e86b.mockapi.io/users/${id}`
       );
@@ -87,34 +102,35 @@ class App extends React.Component {
       const filteredList = this.state.students.filter((student) => {
         return student.id !== id;
       });
-  
+
       this.setState({ students: filteredList });
-    }catch(e){}
-    
+    } catch (e) {}
   };
 
   render() {
     console.log("students state", this.state.students);
 
     return (
-      <>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="inputName"
-          onChange={this.handleChange}
-          value={this.state.userInputName}
-        />
-        <label>Img Url:</label>
-        <input
-          type="text"
-          name="inputImg"
-          onChange={this.handleChange}
-          value={this.state.userInputImg}
-        />
-        <button onClick={this.handleCreate}>Add Student</button>
+      <div className="app-container">
+        <div className="inputbar-container">
+          <label>Name:</label>
+          <input
+            type="text"
+            name="inputName"
+            onChange={this.handleChange}
+            value={this.state.userInputName}
+          />
+          <label>Img Url:</label>
+          <input
+            type="text"
+            name="inputImg"
+            onChange={this.handleChange}
+            value={this.state.userInputImg}
+          />
+          <button onClick={this.handleCreate} className="btn-style">Add Student</button>
+        </div>
         <div className="students-container"> {this.displayStudent()}</div>
-      </>
+      </div>
     );
   }
 }

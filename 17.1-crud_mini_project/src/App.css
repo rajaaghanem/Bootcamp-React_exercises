@@ -3,3 +3,28 @@
   grid-template-columns: repeat(5, 1fr);
   margin: 2rem;
 }
+
+.app-container {
+  margin: 2rem;
+}
+
+.inputbar-container {
+  text-align: center;
+  height: 5rem;
+  font-size: 1.4rem;
+}
+
+.inputbar-container > input {
+  height: 3rem;
+  margin: 1rem;
+  width: 20rem;
+  border: 0.2rem solid green;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.btn-style {
+  background-color: rgb(119, 163, 119);
+  height: 3rem;
+  border-radius: 0.3rem;
+}

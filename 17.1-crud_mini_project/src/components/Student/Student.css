@@ -7,4 +7,17 @@
   border: 0.2rem solid rgb(127, 189, 127);
   margin: 1rem;
   text-align: center;
+  box-shadow: 0.3rem 0.3rem 0.5rem green;
+  border-radius: 0.4rem;
+}
+
+.btn-style {
+  background-color: rgb(119, 163, 119);
+  border-radius: 0.3rem;
+  border: none;
+  margin: 0.4rem;
+}
+
+.student-box > input {
+  text-align: center;
 }
