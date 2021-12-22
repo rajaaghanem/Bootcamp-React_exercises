@@ -13,7 +13,14 @@ class Student extends React.Component {
         this.setState({update: event.target.value});
       }
 
-      handleClickEdit=()=>{
+      handleClickEdit=async()=>{
+        const student = {
+            id:this.props.id,
+            name: this.state.update,
+            imgURL: this.props.imgURL,
+        }
+        const response = await axios.put(`https://61c300cc9cfb8f0017a3e86b.mockapi.io/users/${this.props.id}`,student);
+        console.log("api update:", response);
         this.props.update(this.state.update,this.props.id);
       }
 

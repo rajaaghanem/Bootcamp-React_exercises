@@ -9,10 +9,10 @@ class App extends React.Component {
   componentDidMount=async ()=>{
     const response = await axios.get("https://61c300cc9cfb8f0017a3e86b.mockapi.io/users");
     this.setState({students: response.data})
-    console.log(response);
+    console.log("api",response);
   }
 
-  createStudent=()=>{
+  displayStudent=()=>{
     return this.state.students.map((student)=>{
       return <Student key={student.id} id={student.id} name={student.name} imgURL={student.imgURL} update={this.handleUpdate}/>
     })
@@ -44,7 +44,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.students);
+    console.log("students state",this.state.students);
 
     return (
       <>
@@ -53,7 +53,7 @@ class App extends React.Component {
         <label>Img Url:</label>
         <input type="text" name="inputImg" onChange={this.handleChange} value={this.state.userInputImg}/>
         <button>Add Student</button>
-        <div className="students-container"> {this.createStudent()}</div>
+        <div className="students-container"> {this.displayStudent()}</div>
       </>
     );
   }
