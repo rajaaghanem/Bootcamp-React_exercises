@@ -86,8 +86,8 @@ class App extends React.Component {
         student
       );
       console.log("api add", response);
-      this.setState({
-        students: [...this.state.students, response.data],
+      this.setState((state)=>{
+       return {students: [...state.students, response.data]}
       });
     } catch (e) {}
   };
