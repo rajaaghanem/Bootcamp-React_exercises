@@ -1,0 +1,20 @@
+.Yes,
+.No {
+  background: url("/src/utilities/yes.jpg") no-repeat center center/cover;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.No {
+  background: url("/src/utilities/no.jpg") no-repeat center center/cover;
+}
+
+.underline {
+  text-decoration: line-through;
+}
+
+.line {
+  text-decoration: none;
+}
