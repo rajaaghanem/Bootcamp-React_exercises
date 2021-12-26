@@ -21,10 +21,10 @@ const Text = (props) => {
           className={`blue-text ${active ? "unactive" : "active"}`}
           onClick={handleClick}
         >
-          ...read more
+          read more
         </span>
         <span className={` ${active ? "active" : "unactive"}`}>
-          {restOfText}
+          {restOfText}...
         </span>
         <span
           className={`blue-text ${active ? "active" : "unactive"}`}
