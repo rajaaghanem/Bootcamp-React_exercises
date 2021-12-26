@@ -1,0 +1,13 @@
+.unactive {
+  display: none;
+}
+
+.blue-text {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.active {
+  display: block;
+}

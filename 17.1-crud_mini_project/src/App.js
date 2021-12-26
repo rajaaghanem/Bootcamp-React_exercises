@@ -19,16 +19,6 @@ class App extends React.Component {
     }
   };
 
-  // componentDidMount = async () => {
-  //   const response = await axios
-  //     .get("https://61c300cc9cfb8f0017a3e86b.mockapi.io/users")
-  //     .then((response) => {
-  //       this.setState({ students: response.data });
-  //     })
-  //     .catch(() => {
-  //       console.log("link not found");
-  //     });
-  // };
 
   //map over students in state and display them on screen
   displayStudent = () => {
