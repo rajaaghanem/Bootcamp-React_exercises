@@ -5,7 +5,7 @@ import axios from "axios";
 const App = () => {
   const [term, setTerm] = useState("hooks");
   const [dataRes, setDataRes] = useState([]);
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState("hooks");
 
   useEffect(() => {
     const search = async () => {
@@ -21,11 +21,7 @@ const App = () => {
       }
     };
     search();
-  }, []);
-
-  useEffect(() => {
-    setTerm(userInput);
-  }, [userInput]);
+  }, [term]);
 
   const mapping = () => {
     return dataRes.map((link) => {
@@ -37,22 +33,6 @@ const App = () => {
     });
   };
 
-  const handleClick = () => {
-    const search = async () => {
-      try {
-        const data = await axios.get("https://hn.algolia.com/api/v1/search?", {
-          params: {
-            query: term,
-          },
-        });
-        setDataRes(data.data.hits);
-      } catch (e) {
-        throw new Error("something went wrong");
-      }
-    };
-    search();
-  };
-
   return (
     <div>
       <div className="style">
@@ -61,7 +41,7 @@ const App = () => {
           onChange={(e) => setUserInput(e.target.value)}
           value={userInput}
         />
-        <button onClick={handleClick}>Search</button>
+        <button onClick={()=>setTerm(userInput)}>Search</button>
         {mapping()}
       </div>
     </div>
