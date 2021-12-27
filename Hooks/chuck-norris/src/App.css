@@ -1,0 +1,40 @@
+.style {
+  display: inline-block;
+  background-color: rgb(167, 209, 211);
+  text-align: center;
+  width: 90vw;
+  margin: 1rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.style > div {
+  margin: 2rem;
+}
+
+.style button {
+  width: 2rem;
+  height: 2rem;
+  width: max-content;
+  background-color: rgb(35, 83, 87);
+  border: none;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: cadetblue;
+}
+
+.style ul {
+  text-align: left;
+}
+
+.style input {
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 0.3rem solid rgb(21, 68, 90);
+  margin: 0.3rem;
+}
