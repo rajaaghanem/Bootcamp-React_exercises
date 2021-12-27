@@ -46,15 +46,12 @@ const App = () => {
           },
         });
         setDataRes(data.data.hits);
-        console.log("search", data.data.hits);
       } catch (e) {
         throw new Error("something went wrong");
       }
     };
     search();
   };
-
-  console.log(term);
 
   return (
     <div>
