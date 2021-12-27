@@ -11,7 +11,7 @@ const App = (props) => {
     return dataLite.map((item, idx) => {
       return (
         <div key={idx}>
-          <input name={item} type="checkbox" onChange={handleCheck} />
+          <input name={item} type="checkbox" onChange={handleCheck} checked={!unChecked.includes(item)}/>
           <label>{item}</label>
         </div>
       );
