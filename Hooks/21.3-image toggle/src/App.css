@@ -1,0 +1,15 @@
+.style {
+  display: inline-block;
+  background-color: rgb(167, 209, 211);
+  text-align: center;
+  width: max-content;
+  margin: 1rem;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.style img {
+  width: 30vw;
+  margin: 2rem;
+}
